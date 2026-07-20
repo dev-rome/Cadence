@@ -1,7 +1,15 @@
 import type { Preview } from "@storybook/nextjs-vite";
+import { fontVariables } from "../src/lib/fonts";
 import "../src/app/globals.css";
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <div className={`${fontVariables} font-sans`}>
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     controls: {
       matchers: {
