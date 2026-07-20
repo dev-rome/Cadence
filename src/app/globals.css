@@ -1,1 +1,124 @@
 @import "tailwindcss";
+
+/* Opt into class-based dark mode instead of the OS preference default.
+   :where() keeps specificity at zero so it never wins a fight it shouldn't. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* Raw palette. Never referenced directly by components. */
+  --gray-0: #ffffff;
+  --gray-50: #f7f7f8;
+  --gray-100: #ebebed;
+  --gray-400: #a1a1aa;
+  --gray-500: #71717a;
+  --gray-700: #3f3f46;
+  --gray-900: #18181b;
+  --gray-950: #111113;
+  --gray-1000: #0a0a0b;
+
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+
+  --green-500: #22c55e;
+  --amber-500: #f59e0b;
+  --red-500: #ef4444;
+
+  /* Semantic layer, light theme. */
+  --surface: var(--gray-0);
+  --surface-raised: var(--gray-50);
+  --surface-sunken: var(--gray-100);
+
+  --ink: var(--gray-900);
+  --ink-muted: var(--gray-500);
+  --ink-subtle: var(--gray-400);
+
+  --line: rgb(0 0 0 / 0.08);
+  --line-strong: rgb(0 0 0 / 0.16);
+
+  --accent: var(--blue-600);
+  --accent-hover: var(--blue-500);
+  --accent-ink: var(--gray-0);
+
+  --status-ok: var(--green-500);
+  --status-warn: var(--amber-500);
+  --status-down: var(--red-500);
+}
+
+.dark {
+  --surface: var(--gray-1000);
+  --surface-raised: var(--gray-950);
+  --surface-sunken: #050506;
+
+  --ink: #fafafa;
+  --ink-muted: var(--gray-400);
+  --ink-subtle: var(--gray-500);
+
+  --line: rgb(255 255 255 / 0.08);
+  --line-strong: rgb(255 255 255 / 0.14);
+
+  --accent: var(--blue-500);
+  --accent-hover: var(--blue-400);
+  --accent-ink: var(--gray-1000);
+}
+
+@theme inline {
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
+  --color-surface-sunken: var(--surface-sunken);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-subtle: var(--ink-subtle);
+
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-ink: var(--accent-ink);
+
+  --color-status-ok: var(--status-ok);
+  --color-status-warn: var(--status-warn);
+  --color-status-down: var(--status-down);
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+@theme {
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.45;
+  --text-caption--letter-spacing: 0.01em;
+
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+
+  --text-lead: 1.1875rem;
+  --text-lead--line-height: 1.6;
+
+  --text-title: clamp(1.375rem, 1.15rem + 0.8vw, 1.75rem);
+  --text-title--line-height: 1.25;
+  --text-title--letter-spacing: -0.015em;
+
+  --text-heading: clamp(2rem, 1.35rem + 2.7vw, 3rem);
+  --text-heading--line-height: 1.08;
+  --text-heading--letter-spacing: -0.025em;
+
+  --text-display: clamp(2.75rem, 1.5rem + 5.2vw, 4.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.035em;
+}
+
+@theme {
+  --radius-card: 0.875rem;
+  --radius-panel: 1.25rem;
+  --radius-pill: 9999px;
+
+  --spacing-gutter: 1.5rem;
+  --spacing-section: 6rem;
+  --spacing-section-lg: 10rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+}
