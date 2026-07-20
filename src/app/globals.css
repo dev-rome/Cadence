@@ -57,9 +57,10 @@
   --line: rgb(255 255 255 / 0.08);
   --line-strong: rgb(255 255 255 / 0.14);
 
-  --accent: var(--blue-500);
-  --accent-hover: var(--blue-400);
-  --accent-ink: var(--gray-1000);
+  --accent: var(--blue-600);
+  --accent-hover: var(--blue-500);
+  --accent-ink: var(--gray-0);
+  --accent-text: var(--blue-400);
 }
 
 @theme inline {
@@ -77,6 +78,7 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-accent-ink: var(--accent-ink);
+  --color-accent-text: var(--accent-text);
 
   --color-status-ok: var(--status-ok);
   --color-status-warn: var(--status-warn);
