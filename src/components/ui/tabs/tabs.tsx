@@ -62,6 +62,7 @@ export function TabsList({
 }: React.ComponentProps<typeof Base.List>) {
   return (
     <Base.List
+      activateOnFocus
       className={cn(
         "rounded-pill border-line bg-surface-raised inline-flex items-center gap-1 border p-1",
         className,
