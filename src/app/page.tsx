@@ -3,6 +3,7 @@ import { Hero } from "@/components/features/hero/hero";
 import { LogoCloud } from "@/components/features/logos/logo-cloud";
 import { Problem } from "@/components/features/problem/problem";
 import { BentoGrid } from "@/components/features/bento/bento-grid";
+import { ProductDemo } from "@/components/features/demo/product-demo";
 
 export default function HomePage() {
   return (
@@ -22,6 +23,7 @@ export default function HomePage() {
         <LogoCloud />
         <Problem />
         <BentoGrid />
+        <ProductDemo />
       </main>
     </>
   );
