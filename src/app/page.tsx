@@ -6,6 +6,7 @@ import { BentoGrid } from "@/components/features/bento/bento-grid";
 import { ProductDemo } from "@/components/features/demo/product-demo";
 import { Metrics } from "@/components/features/metrics/metrics";
 import { Testimonials } from "@/components/features/testimonials/testimonials";
+import { Pricing } from "@/components/features/pricing/pricing";
 
 export default function HomePage() {
   return (
@@ -28,6 +29,7 @@ export default function HomePage() {
         <ProductDemo />
         <Metrics />
         <Testimonials />
+        <Pricing />
       </main>
     </>
   );
