@@ -1,4 +1,5 @@
 import { SiteHeader } from "@/components/layout/site-header";
+import { Hero } from "@/components/features/hero/hero";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,9 @@ export default function HomePage() {
       <SiteHeader />
 
       <main id="main">
-        <div id="top" className="h-[200vh]" />
+        <div id="top" />
+        <Hero />
+        <div className="h-screen" />
       </main>
     </>
   );
