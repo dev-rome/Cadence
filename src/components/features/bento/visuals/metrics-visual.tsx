@@ -5,7 +5,7 @@ const stats = [
 
 export function MetricsVisual() {
   return (
-    <div className="flex h-full min-h-40 items-center gap-8">
+    <div className="flex h-full min-h-40 flex-wrap items-center gap-x-8 gap-y-6">
       {stats.map((stat) => (
         <div key={stat.label}>
           <div className="text-heading text-ink font-mono">{stat.value}</div>
