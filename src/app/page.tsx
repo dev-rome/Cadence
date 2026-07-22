@@ -1,5 +1,6 @@
 import { SiteHeader } from "@/components/layout/site-header";
 import { Hero } from "@/components/features/hero/hero";
+import { LogoCloud } from "@/components/features/logos/logo-cloud";
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
       <main id="main">
         <div id="top" />
         <Hero />
-        <div className="h-screen" />
+        <LogoCloud />
       </main>
     </>
   );

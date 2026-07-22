@@ -5,6 +5,7 @@ export interface MarqueeProps extends React.ComponentPropsWithoutRef<"div"> {
   reverse?: boolean;
   pauseOnHover?: boolean;
   fadeEdges?: boolean;
+  repeat?: number;
 }
 
 export function Marquee({
@@ -12,12 +13,13 @@ export function Marquee({
   reverse = false,
   pauseOnHover = true,
   fadeEdges = true,
+  repeat = 4,
   className,
   children,
   ...props
 }: MarqueeProps) {
   const copy = (
-    <div className="flex shrink-0 items-center gap-16 pe-16">{children}</div>
+    <div className="flex shrink-0 items-center gap-10 pe-10">{children}</div>
   );
 
   return (
@@ -28,7 +30,12 @@ export function Marquee({
           "mask-[linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]",
         className,
       )}
-      style={{ "--marquee-duration": `${duration}s` } as React.CSSProperties}
+      style={
+        {
+          "--marquee-duration": `${duration}s`,
+          "--marquee-shift": `${-100 / repeat}%`,
+        } as React.CSSProperties
+      }
       {...props}
     >
       <div
@@ -39,10 +46,11 @@ export function Marquee({
           "motion-reduce:animate-none",
         )}
       >
-        {copy}
-        <div aria-hidden="true" className="contents">
-          {copy}
-        </div>
+        {Array.from({ length: repeat }).map((_, i) => (
+          <div key={i} aria-hidden={i > 0} className="contents">
+            {copy}
+          </div>
+        ))}
       </div>
     </div>
   );
