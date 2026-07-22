@@ -4,6 +4,8 @@ import { LogoCloud } from "@/components/features/logos/logo-cloud";
 import { Problem } from "@/components/features/problem/problem";
 import { BentoGrid } from "@/components/features/bento/bento-grid";
 import { ProductDemo } from "@/components/features/demo/product-demo";
+import { Metrics } from "@/components/features/metrics/metrics";
+import { Testimonials } from "@/components/features/testimonials/testimonials";
 
 export default function HomePage() {
   return (
@@ -24,6 +26,8 @@ export default function HomePage() {
         <Problem />
         <BentoGrid />
         <ProductDemo />
+        <Metrics />
+        <Testimonials />
       </main>
     </>
   );
