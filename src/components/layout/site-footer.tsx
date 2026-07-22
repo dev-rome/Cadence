@@ -79,7 +79,7 @@ export function SiteFooter() {
 
         <div className="border-line flex flex-col justify-between gap-4 border-t py-8 sm:flex-row">
           <span className="text-caption text-ink-subtle">
-            © 2026 Cadence. A portfolio project by Jerome Haynes.
+            © 2026 Cadence.
           </span>
           <div className="flex gap-4">
             <a href="#" className="text-caption text-ink-subtle hover:text-ink">
