@@ -7,6 +7,9 @@ import { ProductDemo } from "@/components/features/demo/product-demo";
 import { Metrics } from "@/components/features/metrics/metrics";
 import { Testimonials } from "@/components/features/testimonials/testimonials";
 import { Pricing } from "@/components/features/pricing/pricing";
+import { Faq } from "@/components/features/faq/faq";
+import { FinalCta } from "@/components/features/cta/final-cta";
+import { SiteFooter } from "@/components/layout/site-footer";
 
 export default function HomePage() {
   return (
@@ -30,7 +33,11 @@ export default function HomePage() {
         <Metrics />
         <Testimonials />
         <Pricing />
+        <Faq />
+        <FinalCta />
       </main>
+
+      <SiteFooter />
     </>
   );
 }
