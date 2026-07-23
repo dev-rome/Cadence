@@ -7,6 +7,7 @@ const valid = {
   pricePerSeat: 12,
   includedSeats: 0,
   annualDiscount: 0.2,
+  customPricing: false,
   features: ["Escalation policies", "Public status pages"],
   highlighted: true,
 };
@@ -20,6 +21,7 @@ describe("mapTiers", () => {
         pricePerSeat: 12,
         includedSeats: 0,
         annualDiscount: 0.2,
+        customPricing: false,
         features: ["Escalation policies", "Public status pages"],
         highlighted: true,
       },
@@ -48,6 +50,16 @@ describe("mapTiers", () => {
     expect(result[0].pricePerSeat).toBe(0);
     expect(result[0].includedSeats).toBe(0);
     expect(result[0].annualDiscount).toBe(0);
+  });
+
+  it("defaults customPricing to false when missing", () => {
+    const result = mapTiers([{ ...valid, customPricing: null }]);
+    expect(result[0].customPricing).toBe(false);
+  });
+
+  it("preserves customPricing when set", () => {
+    const result = mapTiers([{ ...valid, customPricing: true }]);
+    expect(result[0].customPricing).toBe(true);
   });
 
   it("drops a tier with an out-of-range annual discount", () => {

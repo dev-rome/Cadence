@@ -44,6 +44,13 @@ export const pricingTier = defineType({
       initialValue: false,
     }),
     defineField({
+      name: "customPricing",
+      title: "Custom pricing",
+      type: "boolean",
+      description: "Show 'Custom' and a contact-sales CTA instead of a price.",
+      initialValue: false,
+    }),
+    defineField({
       name: "order",
       type: "number",
       validation: (rule) => rule.required().integer().min(0),

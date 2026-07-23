@@ -6,6 +6,7 @@ type RawTier = {
   pricePerSeat?: number | null;
   includedSeats?: number | null;
   annualDiscount?: number | null;
+  customPricing?: boolean | null;
   features?: (string | null)[] | null;
   highlighted?: boolean | null;
 };
@@ -20,7 +21,6 @@ export function mapTiers(raw: (RawTier | null)[] | null | undefined): Tier[] {
     const includedSeats = item.includedSeats ?? 0;
     const annualDiscount = item.annualDiscount ?? 0;
 
-    // A bad discount produces a wrong price, which is worse than a missing tier.
     if (pricePerSeat < 0 || includedSeats < 0) return [];
     if (annualDiscount < 0 || annualDiscount > 1) return [];
 
@@ -35,6 +35,7 @@ export function mapTiers(raw: (RawTier | null)[] | null | undefined): Tier[] {
         pricePerSeat,
         includedSeats,
         annualDiscount,
+        customPricing: item.customPricing ?? false,
         features,
         highlighted: item.highlighted ?? false,
       },

@@ -6,6 +6,7 @@ export interface Tier {
   pricePerSeat: number;
   includedSeats: number;
   annualDiscount: number;
+  customPricing: boolean;
   features: string[];
   highlighted: boolean;
 }
@@ -17,6 +18,7 @@ export const fallbackTiers: Tier[] = [
     pricePerSeat: 0,
     includedSeats: 5,
     annualDiscount: 0,
+    customPricing: false,
     features: [
       "Up to 5 seats",
       "On-call scheduling",
@@ -31,6 +33,7 @@ export const fallbackTiers: Tier[] = [
     pricePerSeat: 12,
     includedSeats: 0,
     annualDiscount: 0.2,
+    customPricing: false,
     features: [
       "Everything in Starter",
       "Escalation policies",
@@ -46,6 +49,7 @@ export const fallbackTiers: Tier[] = [
     pricePerSeat: 0,
     includedSeats: 0,
     annualDiscount: 0,
+    customPricing: true,
     features: [
       "Everything in Team",
       "SSO and SAML",

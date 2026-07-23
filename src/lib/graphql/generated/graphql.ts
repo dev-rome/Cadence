@@ -7,7 +7,7 @@ import { DocumentTypeDecoration } from '@graphql-typed-document-node/core';
 export type LandingPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type LandingPageQuery = { allFeature: Array<{ _id: string | null, title: string | null, body: string | null, visual: string | null, span: string | null, order: number | null }>, allProblem: Array<{ _id: string | null, title: string | null, body: string | null, order: number | null }>, allTestimonial: Array<{ _id: string | null, quote: string | null, name: string | null, role: string | null, company: string | null, initials: string | null, order: number | null }>, allPricingTier: Array<{ _id: string | null, name: string | null, pricePerSeat: number | null, includedSeats: number | null, annualDiscount: number | null, features: Array<string | null> | null, highlighted: boolean | null, order: number | null }>, allFaqItem: Array<{ _id: string | null, question: string | null, answer: string | null, order: number | null }> };
+export type LandingPageQuery = { allFeature: Array<{ _id: string | null, title: string | null, body: string | null, visual: string | null, span: string | null, order: number | null }>, allProblem: Array<{ _id: string | null, title: string | null, body: string | null, order: number | null }>, allTestimonial: Array<{ _id: string | null, quote: string | null, name: string | null, role: string | null, company: string | null, initials: string | null, order: number | null }>, allPricingTier: Array<{ _id: string | null, name: string | null, pricePerSeat: number | null, includedSeats: number | null, annualDiscount: number | null, customPricing: boolean | null, features: Array<string | null> | null, highlighted: boolean | null, order: number | null }>, allFaqItem: Array<{ _id: string | null, question: string | null, answer: string | null, order: number | null }> };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -59,6 +59,7 @@ export const LandingPageDocument = new TypedDocumentString(`
     pricePerSeat
     includedSeats
     annualDiscount
+    customPricing
     features
     highlighted
     order

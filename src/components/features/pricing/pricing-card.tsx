@@ -17,9 +17,10 @@ export function PricingCard({
   seats: number;
   cycle: BillingCycle;
 }) {
-  const isEnterprise = tier.id === "enterprise";
-  const isFree = tier.pricePerSeat === 0 && !isEnterprise;
+  const isCustom = tier.customPricing;
+  const isFree = tier.pricePerSeat === 0 && !isCustom;
   const cost = monthlyCost(tier, seats, cycle);
+  const cycleLabel = cycle === "annual" ? "annually" : "monthly";
 
   return (
     <Card
@@ -35,7 +36,7 @@ export function PricingCard({
       <h3 className="text-title text-ink mt-1">{tier.name}</h3>
 
       <div className="mt-4">
-        {isEnterprise ? (
+        {isCustom ? (
           <span className="text-heading text-ink">Custom</span>
         ) : isFree ? (
           <span className="text-heading text-ink">Free</span>
@@ -50,11 +51,11 @@ export function PricingCard({
       </div>
 
       <p className="text-caption text-ink-subtle mt-1">
-        {isEnterprise
+        {isCustom
           ? "Annual contract"
           : isFree
-            ? "Up to 5 seats"
-            : `${seats} seats, billed ${cycle}`}
+            ? `Up to ${tier.includedSeats} seats`
+            : `${seats} seats, billed ${cycleLabel}`}
       </p>
 
       <ul className="mt-6 flex-1 space-y-3">
@@ -71,7 +72,7 @@ export function PricingCard({
         size="lg"
         className="mt-8 w-full"
         render={
-          <a href="#start">{isEnterprise ? "Contact sales" : "Start free"}</a>
+          <a href="#start">{isCustom ? "Contact sales" : "Start free"}</a>
         }
       />
     </Card>

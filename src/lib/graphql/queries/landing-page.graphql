@@ -28,6 +28,7 @@ query LandingPage {
     pricePerSeat
     includedSeats
     annualDiscount
+    customPricing
     features
     highlighted
     order

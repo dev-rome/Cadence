@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, it, expect } from "vitest";
 import type { Tier } from "@/lib/pricing";
 import { Pricing } from "./pricing";
 import userEvent from "@testing-library/user-event";
@@ -11,6 +11,7 @@ const tiers: Tier[] = [
     pricePerSeat: 0,
     includedSeats: 5,
     annualDiscount: 0,
+    customPricing: false,
     features: ["Up to 5 seats"],
     highlighted: false,
   },
@@ -20,6 +21,7 @@ const tiers: Tier[] = [
     pricePerSeat: 12,
     includedSeats: 0,
     annualDiscount: 0.2,
+    customPricing: false,
     features: ["Escalation policies", "Public status pages"],
     highlighted: true,
   },
@@ -60,8 +62,39 @@ describe("Pricing", () => {
     slider.focus();
     await userEvent.keyboard("{ArrowRight}");
 
-    // 11 seats, annual → 11 * 12 * 0.8 = $105.60, formatted to $106
-    expect(screen.getByText("$106")).toBeInTheDocument();
+    expect(await screen.findByText("$106")).toBeInTheDocument();
+  });
+
+  it("moves between billing options with arrow keys", async () => {
+    render(<Pricing tiers={tiers} />);
+
+    const annual = screen.getByRole("radio", { name: /annual/i });
+    annual.focus();
+    await userEvent.keyboard("{ArrowLeft}");
+
+    expect(screen.getByRole("radio", { name: /monthly/i })).toBeChecked();
+  });
+
+  it("shows custom pricing regardless of the tier id", () => {
+    render(
+      <Pricing
+        tiers={[
+          {
+            ...tiers[1],
+            id: "a7f3c9e1-4b2d-4e8a-9c1f-2d3e4f5a6b7c",
+            name: "Enterprise",
+            pricePerSeat: 0,
+            customPricing: true,
+          },
+        ]}
+      />,
+    );
+
+    expect(screen.getByText("Custom")).toBeInTheDocument();
+    expect(
+      screen.getByRole("link", { name: /contact sales/i }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("Free")).not.toBeInTheDocument();
   });
 
   it("renders without crashing when given an empty list", () => {

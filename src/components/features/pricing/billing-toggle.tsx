@@ -1,5 +1,7 @@
 "use client";
 
+import { RadioGroup } from "@base-ui/react/radio-group";
+import { Radio } from "@base-ui/react/radio";
 import { motion, useReducedMotion } from "motion/react";
 import type { BillingCycle } from "@/lib/pricing";
 import { cn } from "@/lib/utils/cn";
@@ -19,21 +21,20 @@ export function BillingToggle({
   const shouldReduceMotion = useReducedMotion();
 
   return (
-    <div
-      role="radiogroup"
+    <RadioGroup
+      value={cycle}
+      onValueChange={(value) => onChange(value as BillingCycle)}
       aria-label="Billing cycle"
       className="rounded-pill border-line bg-surface-raised inline-flex border p-1"
     >
       {options.map((option) => {
         const isActive = cycle === option.value;
         return (
-          <button
+          <Radio.Root
             key={option.value}
-            role="radio"
-            aria-checked={isActive}
-            onClick={() => onChange(option.value)}
+            value={option.value}
             className={cn(
-              "rounded-pill text-caption relative px-4 py-1.5 transition-colors",
+              "rounded-pill text-caption relative cursor-pointer px-4 py-1.5 transition-colors",
               "focus-visible:ring-accent focus-visible:ring-2 focus-visible:outline-none",
               isActive ? "text-ink" : "text-ink-muted hover:text-ink",
             )}
@@ -56,9 +57,9 @@ export function BillingToggle({
                 <span className="text-status-ok text-caption">-20%</span>
               )}
             </span>
-          </button>
+          </Radio.Root>
         );
       })}
-    </div>
+    </RadioGroup>
   );
 }
