@@ -15,8 +15,11 @@ export function HeroBackground() {
         }}
       />
       <div
-        className="absolute top-0 left-1/2 h-125 w-200 -translate-x-1/2 -translate-y-1/3 rounded-full opacity-20 blur-[120px]"
-        style={{ background: "var(--color-accent)" }}
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 45% at 50% 0%, color-mix(in oklab, var(--color-accent) 22%, transparent), transparent 70%)",
+        }}
       />
     </div>
   );
