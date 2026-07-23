@@ -2,9 +2,13 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Card } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
-import { testimonials } from "@/lib/content/testimonials";
+import type { Testimonial } from "@/lib/content/testimonials";
 
-export function Testimonials() {
+export function Testimonials({
+  testimonials,
+}: {
+  testimonials: Testimonial[];
+}) {
   return (
     <Section id="testimonials" labelledBy="testimonials-heading">
       <Container>

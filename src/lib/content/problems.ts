@@ -1,4 +1,10 @@
-export const problems = [
+export interface Problem {
+  id: string;
+  title: string;
+  body: string;
+}
+
+export const fallbackProblems: Problem[] = [
   {
     id: "routing",
     title: "Alerts go nowhere",
@@ -14,4 +20,4 @@ export const problems = [
     title: "Customers find out from Twitter",
     body: "Your status page is a manual page nobody remembers to update while the fire is still burning.",
   },
-] as const;
+];

@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { monthlyCost, tiers, type Tier } from "./pricing";
+import { monthlyCost, fallbackTiers, type Tier } from "./pricing";
 
-const team = tiers.find((t) => t.id === "team")!;
-const starter = tiers.find((t) => t.id === "starter")!;
+const team = fallbackTiers.find((t) => t.id === "team")!;
+const starter = fallbackTiers.find((t) => t.id === "starter")!;
 
 describe("monthlyCost", () => {
   it("is free for a zero-price tier regardless of seats", () => {

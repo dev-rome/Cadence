@@ -10,7 +10,7 @@ export interface Tier {
   highlighted: boolean;
 }
 
-export const tiers: Tier[] = [
+export const fallbackTiers: Tier[] = [
   {
     id: "starter",
     name: "Starter",

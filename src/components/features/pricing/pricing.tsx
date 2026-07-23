@@ -5,11 +5,11 @@ import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Slider } from "@/components/ui/slider";
-import { tiers, type BillingCycle } from "@/lib/pricing";
+import { type BillingCycle, type Tier } from "@/lib/pricing";
 import { BillingToggle } from "./billing-toggle";
 import { PricingCard } from "./pricing-card";
 
-export function Pricing() {
+export function Pricing({ tiers }: { tiers: Tier[] }) {
   const [cycle, setCycle] = useState<BillingCycle>("annual");
   const [seats, setSeats] = useState(10);
 

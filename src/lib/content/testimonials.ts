@@ -1,4 +1,13 @@
-export const testimonials = [
+export interface Testimonial {
+  id: string;
+  quote: string;
+  name: string;
+  role: string;
+  company: string;
+  initials: string;
+}
+
+export const fallbackTestimonials: Testimonial[] = [
   {
     id: "t1",
     quote:

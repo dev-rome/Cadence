@@ -7,9 +7,9 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Reveal } from "@/components/ui/reveal";
-import { problems } from "@/lib/content/problems";
+import type { Problem } from "@/lib/content/problems";
 
-export function Problem() {
+export function Problem({ problems }: { problems: Problem[] }) {
   return (
     <Section id="problem" labelledBy="problem-heading">
       <Container>

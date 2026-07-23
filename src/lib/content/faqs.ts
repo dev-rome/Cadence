@@ -1,4 +1,10 @@
-export const faqs = [
+export interface Faq {
+  value: string;
+  question: string;
+  answer: string;
+}
+
+export const fallbackFaqs: Faq[] = [
   {
     value: "free-tier",
     question: "Is there really a free tier?",

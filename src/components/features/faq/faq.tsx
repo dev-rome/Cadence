@@ -7,9 +7,9 @@ import {
   AccordionPanel,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { faqs } from "@/lib/content/faqs";
+import type { Faq as FaqItem } from "@/lib/content/faqs";
 
-export function Faq() {
+export function Faq({ faqs }: { faqs: FaqItem[] }) {
   return (
     <Section id="faq" labelledBy="faq-heading">
       <Container>
