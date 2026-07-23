@@ -12,7 +12,8 @@
     "test": "vitest",
     "test:run": "vitest run",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "codegen": "dotenv -e .env.local -- graphql-codegen"
   },
   "dependencies": {
     "@base-ui/react": "^1.6.0",
@@ -20,6 +21,8 @@
     "@sanity/vision": "^5.31.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "graphql": "^16.14.2",
+    "graphql-request": "^7.4.0",
     "motion": "^12.42.2",
     "next": "16.2.10",
     "next-sanity": "^13.1.7",
@@ -31,6 +34,8 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^5.2.1",
+    "@graphql-codegen/cli": "^7.2.0",
+    "@graphql-codegen/client-preset": "^6.1.0",
     "@storybook/addon-a11y": "^10.5.3",
     "@storybook/addon-docs": "^10.5.3",
     "@storybook/addon-mcp": "^0.7.0",
@@ -45,6 +50,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^6.0.3",
     "@vitest/coverage-v8": "4.1.10",
+    "dotenv-cli": "^11.0.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "eslint-plugin-storybook": "^10.5.3",

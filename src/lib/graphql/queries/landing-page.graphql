@@ -1,0 +1,41 @@
+query LandingPage {
+  allFeature(sort: { order: ASC }) {
+    _id
+    title
+    body
+    visual
+    span
+    order
+  }
+  allProblem(sort: { order: ASC }) {
+    _id
+    title
+    body
+    order
+  }
+  allTestimonial(sort: { order: ASC }) {
+    _id
+    quote
+    name
+    role
+    company
+    initials
+    order
+  }
+  allPricingTier(sort: { order: ASC }) {
+    _id
+    name
+    pricePerSeat
+    includedSeats
+    annualDiscount
+    features
+    highlighted
+    order
+  }
+  allFaqItem(sort: { order: ASC }) {
+    _id
+    question
+    answer
+    order
+  }
+}
