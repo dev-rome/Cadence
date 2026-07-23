@@ -1,10 +1,10 @@
 import { Container } from "@/components/layout/container";
 import { Section } from "@/components/layout/section";
 import { Reveal } from "@/components/ui/reveal";
-import { features } from "@/lib/content/features";
+import type { Feature } from "@/lib/content/features";
 import { BentoCard } from "./bento-card";
 
-export function BentoGrid() {
+export function BentoGrid({ features }: { features: Feature[] }) {
   return (
     <Section id="features" labelledBy="features-heading">
       <Container>

@@ -10,8 +10,23 @@ import { Pricing } from "@/components/features/pricing/pricing";
 import { Faq } from "@/components/features/faq/faq";
 import { FinalCta } from "@/components/features/cta/final-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
+import { fetchLandingPage } from "@/lib/graphql/fetch-landing-page";
+import { mapFeatures } from "@/lib/content/map-features";
+import { fallbackFeatures } from "@/lib/content/features";
 
-export default function HomePage() {
+export const revalidate = 3600;
+
+export default async function HomePage() {
+  let features = fallbackFeatures;
+
+  try {
+    const data = await fetchLandingPage();
+    const mapped = mapFeatures(data.allFeature);
+    if (mapped.length > 0) features = mapped;
+  } catch (error) {
+    console.error("CMS fetch failed, using fallback content", error);
+  }
+
   return (
     <>
       <a
@@ -28,7 +43,7 @@ export default function HomePage() {
         <Hero />
         <LogoCloud />
         <Problem />
-        <BentoGrid />
+        <BentoGrid features={features} />
         <ProductDemo />
         <Metrics />
         <Testimonials />

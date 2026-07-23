@@ -11,7 +11,7 @@ export interface Feature {
   span: GridSpan;
 }
 
-export const features: Feature[] = [
+export const fallbackFeatures: Feature[] = [
   {
     id: "routing",
     title: "On-call that actually rotates",
