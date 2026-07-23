@@ -3,6 +3,7 @@
 import { Dialog } from "@base-ui/react/dialog";
 import { Button } from "@/components/ui/button";
 import { navLinks } from "@/lib/nav";
+import { ThemeToggle } from "@/components/layout/theme-toggle";
 import { cn } from "@/lib/utils/cn";
 
 export function MobileNav({ className }: { className?: string }) {
@@ -40,12 +41,15 @@ export function MobileNav({ className }: { className?: string }) {
             <Dialog.Title className="text-title text-ink font-medium">
               Cadence
             </Dialog.Title>
-            <Dialog.Close
-              aria-label="Close menu"
-              className="rounded-pill text-ink focus-visible:ring-accent p-2 focus-visible:ring-2 focus-visible:outline-none"
-            >
-              <CloseIcon />
-            </Dialog.Close>
+            <div className="flex items-center gap-1">
+              <ThemeToggle />
+              <Dialog.Close
+                aria-label="Close menu"
+                className="rounded-pill text-ink focus-visible:ring-accent p-2 focus-visible:ring-2 focus-visible:outline-none"
+              >
+                <CloseIcon />
+              </Dialog.Close>
+            </div>
           </div>
 
           <nav aria-label="Mobile" className="mt-8">

@@ -25,8 +25,8 @@
   --red-500: #ef4444;
 
   /* Semantic layer, light theme. */
-  --surface: var(--gray-0);
-  --surface-raised: var(--gray-50);
+  --surface: var(--gray-50);
+  --surface-raised: var(--gray-0);
   --surface-sunken: var(--gray-100);
 
   --ink: var(--gray-900);
