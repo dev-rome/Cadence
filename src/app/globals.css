@@ -125,6 +125,13 @@
   --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+@layer base {
+  .no-js-visible {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);

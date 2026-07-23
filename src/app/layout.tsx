@@ -53,6 +53,11 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={fontVariables} suppressHydrationWarning>
+      <head>
+        <noscript>
+          <style>{`[style*="opacity:0"]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+      </head>
       <body className="bg-surface text-ink antialiased">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
