@@ -11,6 +11,11 @@ import { Faq } from "@/components/features/faq/faq";
 import { FinalCta } from "@/components/features/cta/final-cta";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { getLandingContent } from "@/lib/content/get-landing-content";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  faqPageSchema,
+  softwareApplicationSchema,
+} from "@/lib/structured-data";
 
 export const revalidate = 3600;
 
@@ -19,6 +24,8 @@ export default async function HomePage() {
     await getLandingContent();
   return (
     <>
+      <JsonLd data={softwareApplicationSchema(tiers)} />
+      <JsonLd data={faqPageSchema(faqs)} />
       <a
         href="#main"
         className="rounded-pill bg-accent text-accent-ink sr-only px-4 py-2 focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-60"
