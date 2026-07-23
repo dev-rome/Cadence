@@ -17,7 +17,13 @@ const stats = [
 
 export function Metrics() {
   return (
-    <section className="border-line border-y py-16 md:py-20">
+    <section
+      aria-labelledby="metrics-heading"
+      className="border-line border-y py-16 md:py-20"
+    >
+      <h2 id="metrics-heading" className="sr-only">
+        Key metrics
+      </h2>
       <Container>
         <div className="grid gap-8 sm:grid-cols-3">
           {stats.map((stat) => (
@@ -66,7 +72,7 @@ function Stat({
   return (
     <div className="text-center">
       <div className="text-display text-ink font-mono">
-        <span ref={ref}>0</span>
+        <span ref={ref}>{value.toFixed(decimals)}</span>
         {suffix}
       </div>
       <div className="text-caption text-ink-subtle mt-2">{label}</div>
