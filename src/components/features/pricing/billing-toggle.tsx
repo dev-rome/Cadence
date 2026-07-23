@@ -54,7 +54,7 @@ export function BillingToggle({
             <span className="relative flex items-center gap-1.5">
               {option.label}
               {option.value === "annual" && (
-                <span className="text-status-ok text-caption">-20%</span>
+                <span className="text-status-ok-text text-caption">-20%</span>
               )}
             </span>
           </Radio.Root>

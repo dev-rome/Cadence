@@ -14,14 +14,14 @@ export function RoutingVisual() {
               <div
                 className={
                   person.active
-                    ? "bg-accent/15 text-caption text-accent ring-accent/40 grid size-10 place-items-center rounded-full font-medium ring-2"
+                    ? "bg-accent/15 text-caption text-accent-text ring-accent/40 grid size-10 place-items-center rounded-full font-medium ring-2"
                     : "bg-surface-raised text-caption text-ink-subtle grid size-10 place-items-center rounded-full font-medium"
                 }
               >
                 {person.initials}
               </div>
               {person.active && (
-                <span className="text-caption text-accent font-mono">
+                <span className="text-caption text-accent-text font-mono">
                   on-call
                 </span>
               )}

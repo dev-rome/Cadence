@@ -13,7 +13,7 @@ export function PostmortemVisual() {
         <span className="text-caption text-ink-subtle font-mono">
           POSTMORTEM
         </span>
-        <span className="rounded-pill bg-accent/15 text-caption text-accent px-2 py-0.5 font-mono">
+        <span className="rounded-pill bg-accent/15 text-caption text-accent-text px-2 py-0.5 font-mono">
           draft
         </span>
       </div>

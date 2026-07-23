@@ -10,19 +10,33 @@
   --gray-50: #f7f7f8;
   --gray-100: #ebebed;
   --gray-400: #a1a1aa;
+  --gray-450: #8b8b94;
   --gray-500: #71717a;
+  --gray-550: #63636c;
+  --gray-600: #52525b;
   --gray-700: #3f3f46;
   --gray-900: #18181b;
   --gray-950: #111113;
   --gray-1000: #0a0a0b;
 
+  --blue-300: #93c5fd;
   --blue-400: #60a5fa;
   --blue-500: #3b82f6;
   --blue-600: #2563eb;
+  --blue-800: #1e40af;
 
+  --green-400: #4ade80;
   --green-500: #22c55e;
+  --green-700: #15803d;
+  --green-800: #166534;
+  --amber-400: #fbbf24;
   --amber-500: #f59e0b;
+  --amber-700: #b45309;
+  --amber-800: #92400e;
+  --red-400: #f87171;
   --red-500: #ef4444;
+  --red-700: #b91c1c;
+  --red-800: #991b1b;
 
   /* Semantic layer, light theme. */
   --surface: var(--gray-50);
@@ -30,19 +44,24 @@
   --surface-sunken: var(--gray-100);
 
   --ink: var(--gray-900);
-  --ink-muted: var(--gray-500);
-  --ink-subtle: var(--gray-400);
+  --ink-muted: var(--gray-600);
+  --ink-subtle: var(--gray-550);
 
   --line: rgb(0 0 0 / 0.08);
   --line-strong: rgb(0 0 0 / 0.16);
 
   --accent: var(--blue-600);
-  --accent-hover: var(--blue-500);
+  --accent-hover: var(--blue-700);
   --accent-ink: var(--gray-0);
+  --accent-text: var(--blue-800);
 
   --status-ok: var(--green-500);
   --status-warn: var(--amber-500);
   --status-down: var(--red-500);
+
+  --status-ok-text: var(--green-800);
+  --status-warn-text: var(--amber-800);
+  --status-down-text: var(--red-800);
 }
 
 .dark {
@@ -52,15 +71,23 @@
 
   --ink: #fafafa;
   --ink-muted: var(--gray-400);
-  --ink-subtle: var(--gray-500);
+  --ink-subtle: var(--gray-450);
 
   --line: rgb(255 255 255 / 0.08);
   --line-strong: rgb(255 255 255 / 0.14);
 
   --accent: var(--blue-600);
-  --accent-hover: var(--blue-500);
+  --accent-hover: var(--blue-700);
   --accent-ink: var(--gray-0);
-  --accent-text: var(--blue-400);
+  --accent-text: var(--blue-300);
+
+  --status-ok: var(--green-500);
+  --status-warn: var(--amber-500);
+  --status-down: var(--red-500);
+
+  --status-ok-text: var(--green-400);
+  --status-warn-text: var(--amber-400);
+  --status-down-text: var(--red-400);
 }
 
 @theme inline {
@@ -83,6 +110,10 @@
   --color-status-ok: var(--status-ok);
   --color-status-warn: var(--status-warn);
   --color-status-down: var(--status-down);
+
+  --color-status-ok-text: var(--status-ok-text);
+  --color-status-warn-text: var(--status-warn-text);
+  --color-status-down-text: var(--status-down-text);
 
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, monospace;

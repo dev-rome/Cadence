@@ -10,9 +10,10 @@ const badgeVariants = cva(
   {
     variants: {
       status: {
-        operational: "border-status-ok/20 bg-status-ok/10 text-status-ok",
-        degraded: "border-status-warn/20 bg-status-warn/10 text-status-warn",
-        down: "border-status-down/20 bg-status-down/10 text-status-down",
+        operational: "border-status-ok/20 bg-status-ok/10 text-status-ok-text",
+        degraded:
+          "border-status-warn/20 bg-status-warn/10 text-status-warn-text",
+        down: "border-status-down/20 bg-status-down/10 text-status-down-text",
         neutral: "border-line bg-surface-raised text-ink-muted",
       },
     },

@@ -30,7 +30,9 @@ export function PricingCard({
       )}
     >
       {tier.highlighted && (
-        <span className="text-caption text-accent font-mono">Most popular</span>
+        <span className="text-caption text-accent-text font-mono">
+          Most popular
+        </span>
       )}
 
       <h3 className="text-title text-ink mt-1">{tier.name}</h3>

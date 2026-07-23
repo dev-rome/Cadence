@@ -27,7 +27,7 @@ export function Faq({ faqs }: { faqs: FaqItem[] }) {
               </h2>
               <p className="text-body text-ink-muted mt-4">
                 Still curious?{" "}
-                <a href="#contact" className="text-accent hover:underline">
+                <a href="#contact" className="text-accent-text hover:underline">
                   Talk to us
                 </a>
                 .

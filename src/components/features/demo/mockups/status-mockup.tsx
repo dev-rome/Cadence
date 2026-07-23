@@ -9,12 +9,12 @@ const config = {
   operational: {
     dot: "bg-status-ok",
     label: "Operational",
-    text: "text-status-ok",
+    text: "text-status-ok-text",
   },
   degraded: {
     dot: "bg-status-warn",
     label: "Degraded",
-    text: "text-status-warn",
+    text: "text-status-warn-text",
   },
 };
 

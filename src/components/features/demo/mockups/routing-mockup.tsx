@@ -54,7 +54,7 @@ export function RoutingMockup() {
             <div
               className={
                 tier.active
-                  ? "bg-accent/15 text-caption text-accent ring-accent/40 grid size-9 shrink-0 place-items-center rounded-full font-medium ring-2"
+                  ? "bg-accent/15 text-caption text-accent-text ring-accent/40 grid size-9 shrink-0 place-items-center rounded-full font-medium ring-2"
                   : "bg-surface-sunken text-caption text-ink-subtle grid size-9 shrink-0 place-items-center rounded-full font-medium"
               }
             >
