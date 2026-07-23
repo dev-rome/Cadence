@@ -15,5 +15,9 @@ export default defineConfig({
     globals: true,
     setupFiles: [path.join(dirname, "src/test/setup.ts")],
     css: true,
+    env: {
+      NEXT_PUBLIC_SANITY_GRAPHQL_URL:
+        "https://test-project.api.sanity.io/v2023-08-01/graphql/production/default",
+    },
   },
 });
